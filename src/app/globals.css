@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Global */
+  .section {
+    @apply py-8 my-8 md:py-24 md:my-12;
+  }
+  .background {
+    @apply bg-gradient-to-b from-bg to-white dark:bg-slate-900 dark:bg-none;
+  }
+
+  .heading {
+    @apply text-center text-[30px] md:text-[40px] font-extrabold mb-12 tracking-wider;
+  }
+  .heading span:nth-child(1) {
+    @apply text-main;
+  }
+  .heading span:nth-child(2) {
+    @apply text-main_medium;
+  }
+  .heading span:nth-child(3) {
+    @apply text-main_light;
+  }
+  .heading span {
+    @apply dark:text-d_main !important;
+  }
+  .highlight {
+    @apply font-semibold text-main dark:text-d_second;
+  }
+
+  .btn {
+    @apply px-3 py-2 rounded-lg;
+  }
+  .btn-r {
+    @apply px-3 py-2 rounded-full h-[42px];
+  }
+
+  .overlay {
+    @apply relative hover:before:opacity-60 before:absolute before:w-full before:h-full before:bg-black before:opacity-0 before:tr;
+  }
+
+  .tr {
+    @apply transition-all duration-300;
+  }
+  .center {
+    @apply flex items-center justify-center;
+  }
+  /* End Global */
+
+  /* Hero Section */
+  .linear {
+    background: linear-gradient(136.82deg, #1e266d 13.3%, #b5f2e3 142.22%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .dark-linear {
+    background: linear-gradient(136.82deg, #8fe3cf 13.3%, #256d85 66.27%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  /* Buttons */
+  .btn-bg {
+    background: linear-gradient(
+      112.27deg,
+      #1e266d 23.97%,
+      #74d5de 118.35%,
+      rgba(255, 255, 255, 0) 118.35%
+    );
+  }
+  .dark-btn-bg {
+    background: linear-gradient(106.09deg, #1e266d -2.16%, #74d5de 121.14%);
+  }
+  /* End Hero Section */
+
+  /* Skills Section */
+  .skill_btn {
+    @apply uppercase btn md:py-3 md:px-6 tr;
+  }
+  .skill_btn_active {
+    @apply text-white border bg-main_medium border-main_medium dark:bg-second dark:text-slate-900 dark:border-second;
+  }
+  .skill_btn_inactive {
+    @apply border border-main_medium text-main_medium hover:bg-main_light hover:text-white dark:text-second dark:border-second dark:hover:bg-second dark:hover:text-slate-900;
+  }
+  /* End Skills Section */
+}
