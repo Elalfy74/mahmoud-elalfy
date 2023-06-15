@@ -1,6 +1,8 @@
 import './globals.css';
 import { Outfit } from 'next/font/google';
 
+import { Footer } from '@/components';
+
 const inter = Outfit({
   subsets: ['latin'],
 });
@@ -17,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

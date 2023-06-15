@@ -1,4 +1,8 @@
+'use client';
+
 import { FiGithub, FiLinkedin, FiTwitter, FiInstagram } from 'react-icons/fi';
+import { motion } from 'framer-motion';
+import { sectionVariants } from '@/utils/variants';
 
 const socialLinks = [
   {
@@ -41,8 +45,13 @@ export const SocialList = () => (
 
 export const SocialBar = () => {
   return (
-    <div className='hidden lg:block z-[1000] fixed bottom-24 after:absolute after:-bottom-28 after:left-1/2 after:-translate-x-1/2 after:w-[1px] after:h-24 after:bg-slate-500'>
+    <motion.div
+      variants={sectionVariants}
+      initial='hidden'
+      animate='visible'
+      className='hidden lg:block z-[1000] fixed bottom-24 after:absolute after:-bottom-28 after:left-1/2 after:-translate-x-1/2 after:w-[1px] after:h-24 after:bg-slate-500'
+    >
       <SocialList />
-    </div>
+    </motion.div>
   );
 };

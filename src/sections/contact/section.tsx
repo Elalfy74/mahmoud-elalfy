@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 import { ContactForm } from './contact-form';
 import { sectionVariants } from '@/utils/variants';
+import Image from 'next/image';
 
 export const Contact = () => {
   return (
@@ -23,7 +24,9 @@ export const Contact = () => {
         variants={sectionVariants}
       >
         <div className='flex-1 hidden overflow-hidden md:block '>
-          <img
+          <Image
+            width={600}
+            height={600}
             className='scale-x-[-1] xl:w-[80%] mx-auto'
             src='/contact.gif'
             alt='contact-img'
