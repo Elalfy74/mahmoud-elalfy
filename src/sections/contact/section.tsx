@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 
 import { ContactForm } from './contact-form';
@@ -19,11 +17,11 @@ export const Contact = () => {
       <h1 className='heading'>
         <span>Contact</span>
       </h1>
-      <motion.div
-        className='flex flex-col overflow-hidden lg:flex-row'
-        variants={sectionVariants}
-      >
-        <div className='flex-1 hidden overflow-hidden md:block '>
+      <div className='flex flex-col overflow-hidden lg:flex-row'>
+        <motion.div
+          className='flex-1 hidden overflow-hidden md:block'
+          variants={leftVariants}
+        >
           <Image
             width={600}
             height={600}
@@ -31,14 +29,43 @@ export const Contact = () => {
             src='/contact.gif'
             alt='contact-img'
           />
-        </div>
-        <div className='flex-1 overflow-hidden'>
+        </motion.div>
+        <motion.div className='flex-1 overflow-hidden' variants={rightVariants}>
           <h3 className='mb-8 text-lg font-semibold text-center'>
             Don&apos;t Be Shy and <span className='highlight'>Contact Me</span>
           </h3>
           <ContactForm />
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </motion.section>
   );
+};
+
+export const leftVariants = {
+  hidden: {
+    x: '-50vw',
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'ween',
+      duration: 0.8,
+    },
+  },
+};
+export const rightVariants = {
+  hidden: {
+    x: '50vw',
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'ween',
+      duration: 0.8,
+    },
+  },
 };

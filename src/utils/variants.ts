@@ -13,3 +13,13 @@ export const sectionVariants: Variants = {
     },
   },
 };
+
+export const itemVariants: Variants = {
+  ...sectionVariants,
+  visible: {
+    ...sectionVariants.visible,
+    transition: {
+      duration: 1,
+    },
+  },
+};

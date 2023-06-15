@@ -1,7 +1,7 @@
 import { use } from 'react';
 import { motion } from 'framer-motion';
 
-import { sectionVariants } from '@/utils/variants';
+import { itemVariants, sectionVariants } from '@/utils/variants';
 import { Testimonial } from './testimonial';
 import { getTestimonials } from './getTestimonials';
 import Image from 'next/image';
@@ -27,15 +27,10 @@ export const TestimonialsList = () => {
         {testimonials.map((test: any, i: number) => (
           <motion.li
             key={test._id}
-            // variants={projectVariants}
+            className='min-h-[22rem]'
+            variants={itemVariants}
             initial='hidden'
             whileInView='visible'
-            transition={{
-              type: 'ween',
-              duration: 1,
-              delay: i * 0.3,
-            }}
-            className='min-h-[22rem]'
             viewport={{ once: true }}
           >
             <Testimonial test={test} />

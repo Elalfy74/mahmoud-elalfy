@@ -1,7 +1,7 @@
 import { use } from 'react';
 import { motion } from 'framer-motion';
 
-import { sectionVariants } from '@/utils/variants';
+import { itemVariants, sectionVariants } from '@/utils/variants';
 import { Project } from './project';
 import { getProjects } from './getProjects';
 
@@ -26,15 +26,10 @@ export const ProjectsList = () => {
         {projects.map((project: any, i: number) => (
           <motion.li
             key={project._id}
-            // variants={projectVariants}
+            variants={itemVariants}
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
-            transition={{
-              type: 'ween',
-              duration: 1,
-              delay: i * 0.3,
-            }}
           >
             <Project project={project} />
           </motion.li>
