@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { skillsAndTools } from './data';
 import { sectionVariants } from '@/utils/variants';
 import { Skill } from './skill';
+import { cn } from '@/utils/cn';
 
 export const SkillsList = () => {
   const [currentSkills, setCurrentSkills] = useState<'skill' | 'tool'>('skill');
@@ -14,12 +15,6 @@ export const SkillsList = () => {
   const filteredSkills = skillsAndTools.filter(
     (skill) => skill.type === currentSkills
   );
-
-  const skillState =
-    currentSkills === 'skill' ? 'skill_btn_active' : 'skill_btn_inactive';
-
-  const toolState =
-    currentSkills === 'tool' ? 'skill_btn_active' : 'skill_btn_inactive';
 
   return (
     <section id='skills' className='relative overflow-hidden'>
@@ -37,14 +32,23 @@ export const SkillsList = () => {
           {/* Start Buttons */}
           <div className='flex md:flex-col'>
             <button
-              className={`${skillState} mr-4 md:mr-0 md:mb-12 skill_btn
-          `}
+              className={cn(
+                'mr-4 md:mr-0 md:mb-12 skill_btn',
+                currentSkills === 'skill'
+                  ? 'skill_btn_active'
+                  : 'skill_btn_inactive'
+              )}
               onClick={() => setCurrentSkills('skill')}
             >
               Skills
             </button>
             <button
-              className={`${toolState} skill_btn `}
+              className={cn(
+                'mr-4 md:mr-0 md:mb-12 skill_btn',
+                currentSkills === 'tool'
+                  ? 'skill_btn_active'
+                  : 'skill_btn_inactive'
+              )}
               onClick={() => setCurrentSkills('tool')}
             >
               Tools

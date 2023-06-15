@@ -1,3 +1,4 @@
+import { cn } from '@/utils/cn';
 import styles from './tooltip.module.css';
 
 export const Tooltip = (props: {
@@ -5,7 +6,7 @@ export const Tooltip = (props: {
   title: string;
 }) => {
   return (
-    <div className={`${styles.tooltip} relative inline-block`}>
+    <div className={cn(styles.tooltip, 'relative inline-block')}>
       {props.children}
       <div className={styles.bottom}>
         <h3>{props.title}</h3>

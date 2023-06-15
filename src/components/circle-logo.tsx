@@ -1,19 +1,22 @@
+import { cn } from '@/utils/cn';
 import Image from 'next/image';
 
 interface Props {
   children?: React.ReactNode;
-  size: 'xs' | 'sm' | 'md' | 'lg';
+  size: keyof typeof sizes;
   logo?: string;
 }
 
 export const CircleLogo = ({ size, logo, children }: Props) => {
   return (
     <div
-      className={
+      className={cn(
+        'flex justify-center items-center rounded-full shadow-xl p-4',
+        sizes[size],
         size === 'xs'
-          ? ` ${sizes[size]} flex justify-center items-center rounded-full shadow-xl p-4  md:p-3 bg-white dark:bg-d_main  dark:bg-opacity-90 `
-          : ` ${sizes[size]} flex justify-center items-center rounded-full shadow-xl p-4 dark:bg-d_second dark:bg-opacity-50`
-      }
+          ? 'md:p-3 bg-white dark:bg-d_main dark:bg-opacity-90'
+          : 'dark:bg-d_second dark:bg-opacity-50'
+      )}
     >
       {children}
       {logo && <Image src={logo} alt='logo' height={50} width={50} />}

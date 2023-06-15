@@ -12,7 +12,7 @@ export default function Home() {
   const mode = useMode((state) => state.mode);
 
   return (
-    <main className={`${mode}`}>
+    <main className={mode}>
       <div className='dark:bg-slate-900 dark:text-slate-500'>
         <Hero />
         <About />

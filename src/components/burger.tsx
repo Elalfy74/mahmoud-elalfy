@@ -1,3 +1,4 @@
+import { cn } from '@/utils/cn';
 import { Dispatch, SetStateAction } from 'react';
 
 type Props = {
@@ -19,7 +20,7 @@ export const Burger = ({ active, setActive }: Props) => {
         id='check'
         checked={active}
         onChange={() => setActive(!active)}
-        className={active ? 'active hidden' : 'hidden'}
+        className={cn('hidden', active && 'active')}
       />
       <span className={`w-1/2 ${styles}`}></span>
       <span className={`w-full ${styles}`}></span>
