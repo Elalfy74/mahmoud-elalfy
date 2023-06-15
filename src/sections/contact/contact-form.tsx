@@ -40,7 +40,7 @@ export const ContactForm = () => {
             Message
           </label>
           <textarea
-            className='block resize-none h-40 p-2 ml-2 w-[80%] rounded border border-gray-400 focus:outline-none dark:bg-slate-800 dark:text-white'
+            className='block resize-none h-40 p-2 ml-2 w-[80%] rounded border border-gray-400 focus:outline-none dark:bg-slate-800 dark:text-white dark:border-none'
             id='message'
             {...register('message')}
           />

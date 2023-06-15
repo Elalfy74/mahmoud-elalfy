@@ -10,7 +10,7 @@ export const Hero = () => {
   return (
     <section
       id='hero'
-      className='h-screen pt-32 overflow-hidden background dark:bg-slate-900 dark:bg-none md:pt-48'
+      className='h-screen pt-32 overflow-hidden background dark:bg-none md:pt-48'
     >
       <div className='container relative flex flex-col justify-between md:items-center md:flex-row'>
         {/* Details Section */}

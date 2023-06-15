@@ -1,5 +1,4 @@
-'use client';
-
+import { use } from 'react';
 import { motion } from 'framer-motion';
 
 import { sectionVariants } from '@/utils/variants';
@@ -7,8 +6,10 @@ import { Testimonial } from './testimonial';
 import { getTestimonials } from './getTestimonials';
 import Image from 'next/image';
 
-export const TestimonialsList = async () => {
-  const testimonials = await getTestimonials();
+const dataPromise = getTestimonials();
+
+export const TestimonialsList = () => {
+  const testimonials = use(dataPromise);
 
   return (
     <motion.section
@@ -34,6 +35,7 @@ export const TestimonialsList = async () => {
               duration: 1,
               delay: i * 0.3,
             }}
+            className='min-h-[22rem]'
             viewport={{ once: true }}
           >
             <Testimonial test={test} />

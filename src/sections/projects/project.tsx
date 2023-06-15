@@ -19,14 +19,14 @@ export const Project = ({ project }: any) => {
           <a href={project.previewLink} target='_blank'>
             <Tooltip title='Preview'>
               <CircleLogo size='xs'>
-                <AiOutlineEye fontSize={22} />
+                <AiOutlineEye fontSize={22} color='black' />
               </CircleLogo>
             </Tooltip>
           </a>
           <a href={project.githubLink} target='_blank'>
             <Tooltip title='Code'>
               <CircleLogo size='xs'>
-                <BsCodeSlash fontSize={22} />
+                <BsCodeSlash fontSize={22} color='black' />
               </CircleLogo>
             </Tooltip>
           </a>

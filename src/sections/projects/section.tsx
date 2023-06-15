@@ -1,13 +1,14 @@
-'use client';
-
+import { use } from 'react';
 import { motion } from 'framer-motion';
 
 import { sectionVariants } from '@/utils/variants';
 import { Project } from './project';
 import { getProjects } from './getProjects';
 
-export const ProjectsList = async () => {
-  const projects = await getProjects();
+const dataPromise = getProjects();
+
+export const ProjectsList = () => {
+  const projects = use(dataPromise);
 
   return (
     <motion.section

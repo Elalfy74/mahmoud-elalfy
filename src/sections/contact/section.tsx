@@ -10,7 +10,7 @@ export const Contact = () => {
   return (
     <motion.section
       id='contact'
-      className='container overflow-hidden section '
+      className='container mb-0 overflow-hidden section'
       variants={sectionVariants}
       initial='hidden'
       whileInView='visible'
