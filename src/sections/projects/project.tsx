@@ -1,17 +1,17 @@
+import Image from 'next/image';
 import { AiOutlineEye } from 'react-icons/ai';
 import { BsCodeSlash } from 'react-icons/bs';
 
 import { Tooltip, CircleLogo } from '@/components';
-import Image from 'next/image';
 
-export const Project = ({ project }: any) => {
+export const Project = ({ project }: { project: IProject }) => {
   return (
     <div className='relative'>
       <div className='overflow-hidden overlay group rounded-xl after:absolute after:btn-bg after:h-1 after:w-full after:bottom-0'>
         <Image
           src={project.mainImage.asset.url}
           alt='project name'
-          className='w-full max-w-full'
+          className='w-full max-w-full aspect-[4/3] object-cover'
           height={400}
           width={400}
         />
@@ -33,7 +33,7 @@ export const Project = ({ project }: any) => {
         </div>
       </div>
       <ul className='absolute flex gap-2 -top-6 -right-4'>
-        {project.tools.map((tool: any) => (
+        {project.tools.map((tool) => (
           <li key={tool.title}>
             <CircleLogo logo={tool.mainImage.asset.url} size='xs' />
           </li>

@@ -64,6 +64,7 @@ export const Hero = () => {
               width={450}
               src='/triangle.webp'
               alt='hero'
+              priority
               className='lg:w-[90%]'
             />
           </div>

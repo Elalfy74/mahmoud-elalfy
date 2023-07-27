@@ -23,7 +23,7 @@ export const ProjectsList = () => {
         <span>Projects</span>
       </h1>
       <ul className='container grid gap-10 md:grid-cols-2 lg:grid-cols-3'>
-        {projects.map((project: any, i: number) => (
+        {projects.map((project) => (
           <motion.li
             key={project._id}
             variants={itemVariants}

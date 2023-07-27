@@ -1,7 +1,7 @@
 import sanityClient from '@/utils/sanity';
 
 export function getProjects() {
-  return sanityClient.fetch(
+  return sanityClient.fetch<IProject[]>(
     `*[_type == 'project']{
         _id,
         title,
