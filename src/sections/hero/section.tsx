@@ -38,7 +38,7 @@ export const Hero = () => {
             >
               Hire Me
             </a>
-            <DownloadButton href='/resume.pdf' />
+            <DownloadButton href='https://drive.google.com/file/d/1kozF0LKdBimKv3k4QtCaIG1MJ_0XZDZM/view?usp=drive_link' />
           </div>
         </motion.div>
         {/*End Details Section */}

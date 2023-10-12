@@ -11,7 +11,7 @@ export const Project = ({ project }: { project: IProject }) => {
         <Image
           src={project.mainImage.asset.url}
           alt='project name'
-          className='w-full max-w-full aspect-[4/3] object-cover'
+          className='w-full max-w-full '
           height={400}
           width={400}
         />

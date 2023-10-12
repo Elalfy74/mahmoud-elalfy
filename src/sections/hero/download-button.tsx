@@ -3,7 +3,7 @@ import { BsDownload } from 'react-icons/bs';
 export const DownloadButton = ({ href }: { href: string }) => {
   return (
     <a
-      download
+      target='_blank'
       href={href}
       className='relative block w-40 overflow-hidden border btn-r border-main text-main xl:text-lg tr group hover:bg-main hover:text-white dark:border-second dark:text-second dark:hover:bg-second'
     >
